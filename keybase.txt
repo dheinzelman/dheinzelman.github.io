@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/hawk
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://elizas.website
+  * I am hawk (https://keybase.io/hawk) on keybase.
+  * I have a public key ASDoVFjLjsPOkmuaK-teZdZafq1NaWQJWKdK5bY6Sz2N6Ao
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101419e57a3b36bf6d76d6de4fd63c0b05f23ac25e78123f9a3438b7502ebacca7b0a",
+            "host": "keybase.io",
+            "kid": "0120e85458cb8ec3ce926b9a2beb5e65d65a7ead4d69640958a74ae5b63a4b3d8de80a",
+            "uid": "d79cf5c4d4c10d76f1f066006dd29300",
+            "username": "hawk"
+        },
+        "service": {
+            "hostname": "elizas.website",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.21"
+    },
+    "ctime": 1493736954,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1493736871,
+        "hash": "39547090e6d72cb9a1d1ef6d8c6d7596c0066481a407a6910bc7c56a1feef34daff614647a2e2d1a53bf9be03a41812a08c6ae6adbffeea9aa37c8e3822041c3",
+        "seqno": 1049582
+    },
+    "prev": "b288a1389ef93d5e26061c273fc9993e5e6fe4931c78d7ee917fb1f4e3475164",
+    "seqno": 26,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg6FRYy47DzpJrmivrXmXWWn6tTWlkCVinSuW2Oks9jegKp3BheWxvYWTFAvN7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTAxNDE5ZTU3YTNiMzZiZjZkNzZkNmRlNGZkNjNjMGIwNWYyM2FjMjVlNzgxMjNmOWEzNDM4Yjc1MDJlYmFjY2E3YjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwZTg1NDU4Y2I4ZWMzY2U5MjZiOWEyYmViNWU2NWQ2NWE3ZWFkNGQ2OTY0MDk1OGE3NGFlNWI2M2E0YjNkOGRlODBhIiwidWlkIjoiZDc5Y2Y1YzRkNGMxMGQ3NmYxZjA2NjAwNmRkMjkzMDAiLCJ1c2VybmFtZSI6Imhhd2sifSwic2VydmljZSI6eyJob3N0bmFtZSI6ImVsaXphcy53ZWJzaXRlIiwicHJvdG9jb2wiOiJodHRwOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4yMSJ9LCJjdGltZSI6MTQ5MzczNjk1NCwiZXhwaXJlX2luIjo1MDQ1NzYwMDAsIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNDkzNzM2ODcxLCJoYXNoIjoiMzk1NDcwOTBlNmQ3MmNiOWExZDFlZjZkOGM2ZDc1OTZjMDA2NjQ4MWE0MDdhNjkxMGJjN2M1NmExZmVlZjM0ZGFmZjYxNDY0N2EyZTJkMWE1M2JmOWJlMDNhNDE4MTJhMDhjNmFlNmFkYmZmZWVhOWFhMzdjOGUzODIyMDQxYzMiLCJzZXFubyI6MTA0OTU4Mn0sInByZXYiOiJiMjg4YTEzODllZjkzZDVlMjYwNjFjMjczZmM5OTkzZTVlNmZlNDkzMWM3OGQ3ZWU5MTdmYjFmNGUzNDc1MTY0Iiwic2Vxbm8iOjI2LCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQAe3drG2+Z36uS27+tX5qcFZdi/D+/g8mjrIWgrhqGwTqDUBxLaH+oGbdBKi5lRuGlFhjWZL3l1KwAT1iYAvAAOoc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCCpA/ZHNMxtCvo+ne3yK+B9vGciEU8TN0I1jdwhYDxoHqN0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/hawk
+
+==================================================================

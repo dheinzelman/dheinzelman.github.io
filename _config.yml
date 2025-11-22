@@ -1,0 +1,99 @@
+# Permalinks
+permalink: "/:title.html"
+
+# Setup
+title: daniel's website
+url: https://danielheinzelman.com
+baseurl: /
+author: &default_author
+  name: Daniel Heinzelman
+  url: https://danielheinzelman.com
+  email: daniel@danielheinzelman.com
+
+encoding: utf-8
+
+exclude:
+  - "website.sublime-project"
+  - "website.sublime-workspace"
+  - "*.log"
+  - "*.fdb_latexmk"
+  - "*.synctex.gz"
+  - "*.aux"
+  - "*.nix"
+  - ".bundle"
+  - ".direnv"
+  - "vendor"
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: main
+      author: *default_author
+  - scope:
+      path: "notes"
+      type: "posts"
+    values:
+      layout: "post"
+      author: *default_author
+  - scope:
+      path: "etc"
+      type: "pages"
+    values:
+      layout: main
+      author: *default_author
+  - scope:
+      path: "slides"
+      type: "pages"
+    values:
+      layout: main
+      author: *default_author
+
+# plugins: ["jekyll-paginate"]
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..4
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Navigation
+nav:
+  - name: "code"
+    href: "https://github.com/hawkw"
+    kind: "dir"
+  # - name:           "art"
+  #   href:           "/portfolio"
+  #   kind:           "dir"
+  - name: "notes"
+    href: "/notes"
+    kind: "dir"
+  - name: "etc"
+    href: "/etc"
+    kind: "dir"
+  - name: "slides"
+    href: "/slides"
+    kind: "dir"
+  - name: "keys"
+    href: "https://keybase.io/hawk"
+    kind: "dir"
+  # - name:           "mail"
+  #   href:           "mailto://eliza@elizas.website"
+  #   kind:           "exe"
+  - name: "about.md"
+    href: "/"
+    kind: "file"
+  - name: "colophon.md"
+    href: "/colophon"
+    kind: "file"
+  - name: "résumé.pdf"
+    href: "/resume.pdf"
+    kind: "file"
