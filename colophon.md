@@ -7,7 +7,7 @@ cmd: cat colophon.md
 Colophon
 ========
 
-All content on this web page is &copy; Eliza Weisman and released under the
+All content on this web page is &copy; Daniel Heinzelman and released under the
 Creative Commons [BY-NC 4.0] license, except where stated otherwise.
 
 This website is hosted on GitHub Pages, and its source code can be found [on
