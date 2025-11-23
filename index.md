@@ -22,11 +22,13 @@ Outside of work, I like to draw, read mainly non-fiction books on culture, socio
 
 A few other corners of the Internet where you can find me include:
 
-+ posts on <a class = "dir" href = "https://infosec.exchange/@danootz">Mastodon</a>
++ work experience on <a class = "dir" href = "https://www.linkedin.com/in/daniel-heinzelman-161341165/">LinkedIn</a>
++ microblogging on <a class = "dir" href = "https://infosec.exchange/@danootz">Mastodon</a>
++ art on <a class = "dir" href = "https://www.instagram.com/_danootz/">Instagram</a>
 
 ### Contact
 
-+ e-mail:<!--  daniel (AT) danielheinzelman (DOT) com
++ e-mail:<!--  contact (AT) danielheinzelman (DOT) com
 + address & telephone number available by request
 
 * * *
