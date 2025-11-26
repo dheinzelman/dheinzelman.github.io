@@ -1,6 +1,6 @@
 ---
 layout: term-colophon
-title: eliza's website
+title: daniel's website
 cmd: cat colophon.md
 ---
 

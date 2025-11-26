@@ -67,6 +67,9 @@ sass:
 
 # Navigation
 nav:
+  - name: "art"
+    href: "/art"
+    kind: "dir"
   - name: "code"
     href: "https://github.com/dheinzelman"
     kind: "dir"
