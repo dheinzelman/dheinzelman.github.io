@@ -24,8 +24,8 @@ canva_projects:
     title: "The Header - A Study in Motion"
 
 canva_docs:
-  - file: case_study_workflow_optimzation_v1.pdf
-    path: case_study_workflow_optimzation_v1/
+  - file: case_study_workflow_optimization_v1.pdf
+    path: case_study_workflow_optimization_v1/
     thumbnail: case_study_workflow_optimization_v1.jpg
     title: "Case Study: Workflow Optimization"
 ---
