@@ -17,11 +17,17 @@ illustrations:
 
 canva_projects:
   - file: social_portfolio_carousel_v1.gif
+    path: social_portfolio_carousel_v1/
     title: "Social Portfolio Carousel"
-  - file: daniel_heinzelman_the_header.gif
-    title: "The Header - A Study in Motion on Canva"
+  - file: daniel_heinzelman_the_header_v1.gif
+    path: the_header_a_study_in_motion/
+    title: "The Header - A Study in Motion"
+
+canva_docs:
   - file: case_study_workflow_optimzation_v1.pdf
-    title: "A Case Study of Workflow Optimization"
+    path: case_study_workflow_optimzation_v1/
+    thumbnail: case_study_workflow_optimzation_v1.jpg
+    title: "Case Study: Workflow Optimization"
 ---
 
 ART (2D)
@@ -81,10 +87,18 @@ Browse my illustrations and design work below.
 <div class="art-grid">
   {% for img in page.canva_projects %}
     <div class="art-item">
-      <a href="/images/art/canva/{{ img.file }}" target="_blank">
-        <img src="/images/art/canva/{{ img.file }}" alt="{{ img.title }}">
+      <a href="/images/art/canva/{{ img.path }}{{ img.file }}" target="_blank">
+        <img src="/images/art/canva/{{ img.path }}{{ img.file }}" alt="{{ img.title }}">
       </a>
       <p>{{ img.title }}</p>
+    </div>
+  {% endfor %}
+  {% for doc in page.canva_docs %}
+    <div class="art-item">
+      <a href="/images/art/canva/{{ doc.path }}{{ doc.file }}" target="_blank">
+        <img src="/images/art/canva/{{ doc.path }}{{ doc.thumbnail }}" alt="{{ doc.title }}">
+      </a>
+      <p>{{ doc.title }} (PDF)</p>
     </div>
   {% endfor %}
 </div>
