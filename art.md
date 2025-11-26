@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: term
 title: art
 permalink: /art/
 # --------------------------------------------------------
