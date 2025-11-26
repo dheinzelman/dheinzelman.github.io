@@ -3,42 +3,48 @@ layout: page
 title: art
 permalink: /art/
 # --------------------------------------------------------
-# LIST YOUR IMAGES BELOW
+# UPDATE YOUR FILENAMES HERE
 # --------------------------------------------------------
 illustrations:
-  - file: pumpkin_receipt_art.png
-    title: "Pumpkin Receipt Art for Barnes & Noble, Inc."
+  - file: pumpkin_receipt_art.jpg
+    title: "Pumpkin Receipt Art"
   - file: cookie_receipt_art.png
-    title: "Cookie Receipt Art for Barnes & Noble, Inc."
+    title: "Cookie Receipt Art"
   - file: inktober_1_poison_2018.png
-    title: "Inktober 2018 Drawing"
+    title: "Inktober 2018"
   - file: valentines_day_2022.png
-    title: "Valentines Day 2022 Drawing"
+    title: "Valentines Day 2022"
 
 canva_projects:
   - file: social_portfolio_carousel_v1.gif
-    title: "Social Media Post - Portfolio Carousel"
-  - file: daniel_heinzelman_the_header_v1.gif
-    title: "The Header - A Study in Motion"
-  - file: case_study_workflow_optimization_v1.pdf
-    title: "One-Pager - Case Study - Workflow Optimization"
+    title: "Social Portfolio Carousel"
+  - file: daniel_heinzelman_the_header.gif
+    title: "The Header - A Study in Motion on Canva"
+  - file: case_study_workflow_optimzation_v1.pdf
+    title: "A Case Study of Workflow Optimization"
 ---
 
+ART (2D)
+========
+
+Here's some of the art that I have made.
+
+Browse my illustrations and design work below.
+
+## ILLUSTRATION
+
 <style>
-/* This CSS creates the Grid Layout */
+/* A Cleaner, "Terminal" Grid */
 .art-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  margin-bottom: 40px;
+  gap: 30px;
+  margin-bottom: 50px;
 }
 
 .art-item {
-  border: 1px solid #eee;
-  padding: 10px;
-  text-align: center;
-  border-radius: 5px;
-  background: #fff;
+  /* Removed the white background and border to match the theme */
+  text-align: left; 
 }
 
 .art-item img {
@@ -46,17 +52,18 @@ canva_projects:
   height: auto;
   display: block;
   margin-bottom: 10px;
-  border-radius: 3px;
+  /* Adds a slight border to images only, typical of retro sites */
+  border: 1px solid #000; 
 }
 
 .art-item p {
   margin: 0;
+  font-family: inherit; /* Uses the site's terminal font */
   font-size: 0.9em;
-  color: #666;
+  color: #000;
+  font-weight: bold;
 }
 </style>
-
-## Illustrations
 
 <div class="art-grid">
   {% for img in page.illustrations %}
@@ -69,7 +76,7 @@ canva_projects:
   {% endfor %}
 </div>
 
-## Canva Projects
+## DESIGN / CANVA
 
 <div class="art-grid">
   {% for img in page.canva_projects %}
