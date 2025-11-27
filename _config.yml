@@ -1,6 +1,12 @@
 # Permalinks
 permalink: "/:title.html"
 
+# Collections
+collections:
+  notes:
+    output: true
+    permalink: /notes/:title
+
 # Setup
 title: daniel's website
 url: https://danielheinzelman.com
@@ -30,12 +36,6 @@ defaults:
       type: "pages"
     values:
       layout: main
-      author: *default_author
-  - scope:
-      path: "notes"
-      type: "posts"
-    values:
-      layout: "post"
       author: *default_author
   - scope:
       path: "etc"
