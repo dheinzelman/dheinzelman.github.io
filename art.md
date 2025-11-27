@@ -30,14 +30,16 @@ canva_docs:
     title: "Case Study: Workflow Optimization"
 ---
 
-ART (2D)
+ART & Design
 ========
 
-Here's some of the art that I have made.
+Here's some of the work that I've created.
 
-Browse my illustrations and design work below.
+Browse my: 
+- [Illustrations](#illustration)
+- [Canva design work](#design--canva)
 
-## ILLUSTRATION
+<h2 id="illustration">ILLUSTRATION</h2>
 
 <style>
 /* A Cleaner, "Terminal" Grid */
@@ -82,7 +84,7 @@ Browse my illustrations and design work below.
   {% endfor %}
 </div>
 
-## DESIGN / CANVA
+<h2 id="design--canva">DESIGN / CANVA</h2>
 
 <div class="art-grid">
   {% for img in page.canva_projects %}
