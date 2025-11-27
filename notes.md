@@ -1,10 +1,11 @@
 ---
-layout: page
+layout: term
 title: notes
 permalink: /notes/
+cmd: ls -la notes
 ---
 
-### Recent Notes
+Recent Notes
 
 <div class="term">
   <table>
