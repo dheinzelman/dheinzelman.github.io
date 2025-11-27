@@ -6,11 +6,15 @@ permalink: /notes/
 
 ### Recent Notes
 
-<ul>
-  {% for note in site.notes %}
-    <li>
-      <a href="{{ note.url }}">{{ note.title }}</a>
-      <span style="color: #888;"> — {{ note.date | date: "%B %d, %Y" }}</span>
-    </li>
-  {% endfor %}
-</ul>
+<div class="term">
+  <table>
+    {% for note in site.notes %}
+    <tr class="ls-la">
+      <td class="date">{{ note.date | date: "%b %d %Y" }}</td>
+      <td>
+        <a class="file" href="{{ note.url }}">{{ note.title }}</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>

@@ -8,7 +8,7 @@ cmd: cat about.md
 
 Hi there!
 
-I'm currently reestablishing my personal website. In the near future you will be able to find my art, blog posts, music I'm listening to, and links to things I find interesting.
+I'm currently reestablishing my personal website. Here you can find my <a class = "dir" href = "https://danielheinzelman.com/art">art and design projects</a>, notes, music I'm listening to, and links to things I find interesting.
 
 ## About Me
 
