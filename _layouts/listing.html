@@ -1,0 +1,56 @@
+---
+layout: default
+---
+<div class="term">
+    <div class="prompt host"></div>
+    <div class="prompt path"><a href="{{ site.baseurl }}/" class="dir">~</a><a href="{{ page.url | relative_url }}" class="dir">{{ page.dir | downcase }}</a></div>
+    <div class="prompt cmd">ls -la</div>
+
+    <table class="ls-la">
+        <tbody>
+            <tr>
+                <td><a href="../" class="dir">drwxr-xr-x</a></td>
+                <td class="num">2</td>
+                <td class="author">daniel</td>
+                <td class="author">daniel</td>
+                <td class="size">4096</td>
+                <td class="date"></td>
+                <td><a href="../" class="dir">../</a></td>
+            </tr>
+        {%- assign notes = site.notes | sort: "date" | reverse -%}
+        {%- for note in notes -%}
+            {%- if note.url == page.url -%}{%- continue -%}{%- endif -%}
+            <tr>
+                <td><a href="{{ note.url | relative_url }}" class="file">-rw-r--r--</a></td>
+                <td class="num">1</td>
+                <td class="author">daniel</td>
+                <td class="author">daniel</td>
+                <td class="size">{{ note.content | number_of_words }}</td>
+                <td class="date">{{ note.date | date: "%b %d %Y" }}</td>
+                <td><a href="{{ note.url | relative_url }}" class="file">{{ note.url | split: '/' | last | replace: '.html', '' }}</a></td>
+            </tr>
+        {%- endfor -%}
+
+        {%- assign external_posts = site.data.external-posts | sort: "date" | reverse -%}
+        {%- for post in external_posts -%}
+            <tr>
+                <td><a href="{{ post.href }}" class="symlink">lrwxr-xr-x</a></td>
+                <td class="num">1</td>
+                <td class="author">daniel</td>
+                <td class="author">daniel</td>
+                <td class="size">{{ post.size }}</td>
+                <td class="date">{{ post.date | date: "%b %d %Y" }}</td>
+                <td><a href="{{ post.href }}" class="symlink">{{ post.title | slugify }}</a></td>
+            </tr>
+        {%- endfor -%}
+        </tbody>
+    </table>
+</div>
+
+<div class="term">
+    <div class="prompt host"></div>
+    <div class="prompt path"><a href="{{ site.baseurl }}/" class="dir">~</a><a href="{{ page.url | relative_url }}" class="dir">{{ page.dir | downcase }}</a></div>
+    <div class="prompt cmd"><span class="blinking-cursor">_</span></div>
+</div>
+
+{{ content }}
