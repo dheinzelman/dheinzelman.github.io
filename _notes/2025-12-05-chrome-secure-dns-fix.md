@@ -1,3 +1,9 @@
+---
+layout: note
+title: "Fixing Chrome's 'Use secure DNS' on macOS"
+date: 2025-12-05
+---
+
 ## **Detailed Resolution Summary: Chrome Policy Lockout**
 
 This document summarizes the troubleshooting steps and final resolution for enabling the "Use secure DNS" setting in Google Chrome on macOS when it was disabled by a persistent enterprise policy.
