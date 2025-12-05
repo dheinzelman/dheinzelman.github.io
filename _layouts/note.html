@@ -1,7 +1,18 @@
 ---
-layout: term
-cmd: cat {{ page.path | split: "/" | last }}
+layout: default
 ---
+<div class="term">
+    <div class="prompt host"></div>
+    <div class="prompt path"><a href="{{ site.baseurl }}/" class="dir">~</a><a href="{{ page.dir | relative_url }}" class="dir">{{ page.dir | downcase }}</a></div>
+    <div class="prompt cmd">cat {{ page.url | split: '/' | last | replace: '.html', '' }}</div>
+</div>
 
-{{ content }}
-<br>
+<div class="term">
+    {{ content }}
+</div>
+
+<div class="term">
+    <div class="prompt host"></div>
+    <div class="prompt path"><a href="{{ site.baseurl }}/" class="dir">~</a><a href="{{ page.dir | relative_url }}" class="dir">{{ page.dir | downcase }}</a></div>
+    <div class="prompt cmd"><span class="blinking-cursor">_</span></div>
+</div>
