@@ -1,7 +1,9 @@
 ---
-layout: note
-title: "Fixing Chrome's 'Use secure DNS' on macOS"
-date: 2025-12-05
+layout: kb_article
+title: "Fixing Chrome Secure DNS Issues"
+category: networking
+last_updated: 2025-12-21
+tags: [chrome, dns, networking, troubleshooting]
 ---
 
 ## **Detailed Resolution Summary: Chrome Policy Lockout**
