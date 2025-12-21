@@ -5,13 +5,22 @@ permalink: /kb/
 ---
 
 <!-- 
-  KNOWLEDGE BASE INDEX
-  Layout: 'page' automatically handles the Site Header & Navigation.
-  We only style the content inside the wrapper.
+  CSS SURGERY:
+  We keep 'layout: page' so we get the Navigation Bar.
+  But we hide the Site Title and the Footer because they clutter the KB view.
 -->
-
 <style>
-  /* The "Box" inside the page */
+  /* 1. Hide the "Daniel's Website" text in the header */
+  header .site-title {
+    display: none !important;
+  }
+
+  /* 2. Hide the "Improve this page" footer */
+  footer, .site-footer {
+    display: none !important;
+  }
+
+  /* 3. Knowledge Base Container Styles */
   .kb-lobby-container {
     background-color: #f4f4f4;
     color: #222;
@@ -20,7 +29,6 @@ permalink: /kb/
     font-family: 'Courier New', Courier, monospace;
     border: 1px solid #999;
     box-shadow: 5px 5px 0px rgba(0,0,0,0.2);
-    /* Ensure it doesn't rub against the header */
     margin-top: 1rem; 
   }
 
