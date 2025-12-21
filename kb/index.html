@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: Knowledge Base
 permalink: /kb/
 ---
@@ -7,14 +7,17 @@ permalink: /kb/
 <!-- KNOWLEDGE BASE INDEX (Integrated Style) -->
 <style>
   /* Wrapper that sits INSIDE the main site container */
-  .kb-lobby-container {
-    background-color: #f4f4f4; /* Light grey contrast against site black */
+ .kb-lobby-container {
+    background-color: #f4f4f4;
     color: #222;
     padding: 2rem;
-    margin-top: 2rem;
+    /* Increase top margin to ensure it sits BELOW the nav bar */
+    margin-top: 50px; 
     border-radius: 4px;
     font-family: 'Courier New', Courier, monospace;
     border: 1px solid #444;
+    position: relative; /* Ensure z-index works */
+    z-index: 1; /* Sit above background but below fixed headers if any */
   }
 
   .kb-category-header {
