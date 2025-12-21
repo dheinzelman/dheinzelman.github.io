@@ -1,0 +1,103 @@
+---
+layout: default
+title: Knowledge Base
+permalink: /kb/
+---
+
+<!-- 
+  KNOWLEDGE BASE INDEX (The Lobby)
+  Reuses the styling from the article layout for consistency
+-->
+
+<style>
+  .kb-index-wrapper {
+    background-color: #e0e0e0;
+    min-height: 100vh;
+    padding: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    color: #222;
+  }
+
+  .kb-index-sheet {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 3rem;
+    border: 1px solid #999;
+    box-shadow: 8px 8px 0px rgba(0,0,0,0.15);
+  }
+
+  .kb-category-section {
+    margin-bottom: 3rem;
+  }
+
+  .kb-category-title {
+    font-size: 1.5rem;
+    border-bottom: 2px solid #222;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .kb-article-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .kb-article-item {
+    padding: 0.8rem 0;
+    border-bottom: 1px dashed #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .kb-article-item a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  .kb-article-item a:hover {
+    text-decoration: underline;
+  }
+
+  .kb-article-date {
+    font-size: 0.85rem;
+    color: #888;
+  }
+</style>
+
+<div class="kb-index-wrapper">
+  <div class="kb-index-sheet">
+    <h1 style="margin-bottom: 0.5rem;">KNOWLEDGE BASE</h1>
+    <p style="color: #666; margin-bottom: 3rem;">
+      Documentation, Standard Operating Procedures (SOPs), and Technical Guides.
+    </p>
+
+    <!-- Loop through the KB collection -->
+    {% assign grouped_kb = site.kb | group_by: "category" %}
+    
+    {% for category in grouped_kb %}
+      <div class="kb-category-section">
+        <h2 class="kb-category-title">{{ category.name | capitalize }}</h2>
+        <ul class="kb-article-list">
+          {% for article in category.items %}
+            <li class="kb-article-item">
+              <a href="{{ article.url }}">{{ article.title }}</a>
+              <span class="kb-article-date">{{ article.last_updated | date: "%Y-%m-%d" }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+
+    {% if site.kb.size == 0 %}
+      <div class="kb-callout warning">
+        <span class="kb-callout-title">System Status</span>
+        No articles found. Please ensure the <code>_kb</code> collection is populated.
+      </div>
+    {% endif %}
+
+  </div>
+</div>

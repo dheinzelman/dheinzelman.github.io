@@ -1,0 +1,238 @@
+---
+layout: default
+---
+
+<!-- 
+  KNOWLEDGE BASE LAYOUT (Light Mode / Technical Manual Style)
+  Version: 1.0
+  Author: Daniel Heinzelman
+-->
+
+<style>
+  /* --------------------------------------------------
+     1. SCOPED RESET (Force Light Mode)
+     -------------------------------------------------- */
+  .kb-wrapper {
+    /* The "Desk" background - distinct from the main site's terminal black */
+    background-color: #e0e0e0; 
+    color: #222;
+    font-family: 'Courier New', Courier, monospace; /* Enforce Technical Font */
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+  }
+
+  /* The "Paper" Sheet */
+  .kb-sheet {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #999;
+    box-shadow: 8px 8px 0px rgba(0,0,0,0.15); /* Retro hard shadow */
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 240px; /* Content | TOC */
+    gap: 3rem;
+    position: relative;
+  }
+
+  /* Mobile Responsive: Stack columns */
+  @media (max-width: 900px) {
+    .kb-sheet {
+      grid-template-columns: 1fr;
+      padding: 1.5rem;
+    }
+    .kb-sidebar {
+      display: none; /* Hide TOC on mobile for MVP simplicity */
+    }
+  }
+
+  /* --------------------------------------------------
+     2. TYPOGRAPHY & ELEMENTS
+     -------------------------------------------------- */
+  .kb-content h1 {
+    font-size: 2rem;
+    border-bottom: 4px solid #222;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .kb-content h2 {
+    font-size: 1.4rem;
+    margin-top: 2.5rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.3rem;
+  }
+
+  .kb-content p {
+    line-height: 1.7; /* High readability */
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .kb-content a {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+
+  .kb-content code {
+    background-color: #f4f4f4;
+    padding: 0.2rem 0.4rem;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 0.9em;
+    color: #d63384; /* Syntax highlight color */
+  }
+
+  .kb-content pre {
+    background-color: #2d2d2d; /* Keep code blocks dark for contrast */
+    color: #f8f8f2;
+    padding: 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    border: 1px solid #000;
+  }
+
+  /* --------------------------------------------------
+     3. CALLOUTS (Admonitions)
+     -------------------------------------------------- */
+  .kb-callout {
+    padding: 1rem 1rem 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 5px solid;
+    background-color: #f9f9f9;
+  }
+
+  .kb-callout.warning {
+    border-color: #d32f2f; /* Red */
+    background-color: #fdecea;
+  }
+
+  .kb-callout.note {
+    border-color: #1976d2; /* Blue */
+    background-color: #e3f2fd;
+  }
+
+  .kb-callout.tip {
+    border-color: #388e3c; /* Green */
+    background-color: #e8f5e9;
+  }
+
+  .kb-callout-title {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+  }
+
+  /* --------------------------------------------------
+     4. NAVIGATION (Breadcrumbs & Sidebar)
+     -------------------------------------------------- */
+  .kb-breadcrumbs {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 2rem;
+    font-family: monospace;
+  }
+
+  .kb-breadcrumbs a {
+    color: #666;
+    text-decoration: none;
+  }
+
+  .kb-breadcrumbs a:hover {
+    text-decoration: underline;
+  }
+
+  .kb-sidebar {
+    border-left: 2px solid #eee;
+    padding-left: 1.5rem;
+  }
+
+  .kb-toc-header {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #999;
+    letter-spacing: 1px;
+  }
+
+  .kb-toc ul {
+    list-style: none;
+    padding: 0;
+    font-size: 0.9rem;
+  }
+
+  .kb-toc li {
+    margin-bottom: 0.8rem;
+  }
+
+  .kb-toc a {
+    color: #444;
+    text-decoration: none;
+    display: block;
+  }
+
+  .kb-toc a:hover {
+    color: #000;
+    font-weight: bold;
+  }
+
+  /* Metadata Footer */
+  .kb-meta {
+    margin-top: 4rem;
+    padding-top: 1rem;
+    border-top: 1px dashed #ccc;
+    font-size: 0.8rem;
+    color: #888;
+  }
+</style>
+
+<!-- MAIN WRAPPER -->
+<div class="kb-wrapper">
+  
+  <div class="kb-sheet">
+    <!-- LEFT COLUMN: CONTENT -->
+    <main class="kb-content">
+      
+      <!-- Breadcrumbs -->
+      <nav class="kb-breadcrumbs">
+        <a href="/">~</a> / <a href="/kb">KB</a> / {{ page.category | default: "General" }}
+      </nav>
+
+      <!-- Header -->
+      <header>
+        <h1>{{ page.title }}</h1>
+      </header>
+
+      <!-- The Markdown Content -->
+      {{ content }}
+
+      <!-- Footer Metadata -->
+      <footer class="kb-meta">
+        <strong>Last Updated:</strong> {{ page.last_updated | date: "%Y-%m-%d" }} <br>
+        <strong>Tags:</strong> {{ page.tags | join: ", " }}
+      </footer>
+    </main>
+
+    <!-- RIGHT COLUMN: SIDEBAR -->
+    <aside class="kb-sidebar">
+      <div class="kb-toc-header">CONTENTS</div>
+      <nav class="kb-toc">
+        <!-- 
+           Auto-generate TOC from headers. 
+           NOTE: This requires kramdown 'toc_levels' config or a jekyll plugin. 
+           For MVP, we use a simple Liquid loop if 'toc' is enabled in front matter, 
+           or manual links. For now, we leave a placeholder.
+        -->
+        <ul>
+          <li><a href="#">(Auto-generated TOC)</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+  </div>
+</div>
