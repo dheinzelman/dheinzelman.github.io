@@ -91,3 +91,11 @@ nav:
   # - name: "résumé.pdf"
   #  href: "/resume.pdf"
   #  kind: "file"
+
+# --------------------------------------------------------
+# CUSTOM COLLECTIONS
+# --------------------------------------------------------
+collections:
+  kb:
+    output: true
+    permalink: /kb/:path/
