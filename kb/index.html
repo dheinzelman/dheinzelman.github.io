@@ -4,20 +4,24 @@ title: Knowledge Base
 permalink: /kb/
 ---
 
-<!-- KNOWLEDGE BASE INDEX (Integrated Style) -->
+<!-- 
+  KNOWLEDGE BASE INDEX
+  Layout: 'page' automatically handles the Site Header & Navigation.
+  We only style the content inside the wrapper.
+-->
+
 <style>
-  /* Wrapper that sits INSIDE the main site container */
- .kb-lobby-container {
+  /* The "Box" inside the page */
+  .kb-lobby-container {
     background-color: #f4f4f4;
     color: #222;
     padding: 2rem;
-    /* Increase top margin to ensure it sits BELOW the nav bar */
-    margin-top: 50px; 
     border-radius: 4px;
     font-family: 'Courier New', Courier, monospace;
-    border: 1px solid #444;
-    position: relative; /* Ensure z-index works */
-    z-index: 1; /* Sit above background but below fixed headers if any */
+    border: 1px solid #999;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.2);
+    /* Ensure it doesn't rub against the header */
+    margin-top: 1rem; 
   }
 
   .kb-category-header {
@@ -27,6 +31,7 @@ permalink: /kb/
     padding-bottom: 0.2rem;
     text-transform: uppercase;
     font-weight: bold;
+    color: #000;
   }
 
   .kb-list {
@@ -40,6 +45,7 @@ permalink: /kb/
     border-bottom: 1px dashed #ccc;
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
   }
 
   .kb-list a {
@@ -54,7 +60,7 @@ permalink: /kb/
 </style>
 
 <div class="kb-lobby-container">
-  <h1 style="border-bottom: none; margin-bottom: 0.5rem;">KNOWLEDGE BASE</h1>
+  <h1 style="border-bottom: none; margin-bottom: 0.5rem; color: #000;">KNOWLEDGE BASE</h1>
   <p style="margin-bottom: 2rem; color: #555;">Technical documentation and standard operating procedures.</p>
 
   {% assign grouped_kb = site.kb | group_by: "category" %}
@@ -74,6 +80,6 @@ permalink: /kb/
   {% endfor %}
 
   {% if site.kb.size == 0 %}
-    <p><em>No articles found. Check front matter categories.</em></p>
+    <p style="color: #666;"><em>No articles found. Check front matter categories.</em></p>
   {% endif %}
 </div>
