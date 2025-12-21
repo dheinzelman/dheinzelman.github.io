@@ -1,25 +1,14 @@
 ---
-layout: page
+layout: common
 title: Knowledge Base
 permalink: /kb/
 ---
 
-<!-- 
-  CSS SURGERY:
-  We keep 'layout: page' so we get the Navigation Bar.
-  But we hide the Site Title and the Footer because they clutter the KB view.
--->
+<header class="term">
+    {% include term-nav.html %}
+</header>
+
 <style>
-  /* 1. Hide the "Daniel's Website" text in the header */
-  header .site-title {
-    display: none !important;
-  }
-
-  /* 2. Hide the "Improve this page" footer */
-  footer, .site-footer {
-    display: none !important;
-  }
-
   /* 3. Knowledge Base Container Styles */
   .kb-lobby-container {
     background-color: #f4f4f4;
