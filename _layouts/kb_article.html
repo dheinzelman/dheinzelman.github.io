@@ -18,14 +18,38 @@ layout: common
     box-shadow: 5px 5px 0px rgba(255,255,255,0.2);
     text-align: left;
     margin-top: 20px;
+    margin-bottom: 50px;
+    
+    /* FIX 1: Prevent Spillover */
+    overflow-wrap: break-word;  /* Standard property */
+    word-wrap: break-word;      /* Legacy support */
+    max-width: 100%;            /* Ensure it never exceeds screen width */
+    box-sizing: border-box;     /* Keep padding inside width calculation */
   }
 
-  /* Typography Overrides for Light Mode */
+  /* Typography Overrides */
   .kb-paper h1, .kb-paper h2, .kb-paper h3 { color: #000; border-bottom-color: #ccc; }
   .kb-paper p, .kb-paper li { color: #333; line-height: 1.6; }
-  .kb-paper a { color: #0056b3; }
-  .kb-paper code { background-color: #f4f4f4; color: #d63384; padding: 2px 5px; }
-  .kb-paper pre { background-color: #2d2d2d; color: #f8f8f2; padding: 1rem; border-radius: 4px; overflow-x: auto; }
+  .kb-paper a { color: #0056b3; word-break: break-all; } /* Force long links to break */
+
+  /* FIX 2: Inline Code Wrapping */
+  .kb-paper code { 
+    background-color: #f4f4f4; 
+    color: #d63384; 
+    padding: 2px 5px; 
+    word-break: break-word; /* Allow long file paths to wrap */
+  }
+
+  /* Code Blocks (Scroll instead of wrap) */
+  .kb-paper pre { 
+    background-color: #2d2d2d; 
+    color: #f8f8f2; 
+    padding: 1rem; 
+    border-radius: 4px; 
+    overflow-x: auto; /* Adds scrollbar if too wide */
+    white-space: pre; /* Preserves formatting */
+    border: 1px solid #ddd;
+  }
 
   /* Callouts */
   .kb-callout { padding: 1rem; margin: 1.5rem 0; border-left: 5px solid #333; background: #f9f9f9; }
@@ -38,6 +62,27 @@ layout: common
   
   /* Meta Footer */
   .kb-footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px dashed #ccc; font-size: 0.8rem; color: #888; }
+
+  /* FIX 3: Responsive Tables */
+  .kb-paper table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin: 2rem 0; 
+    font-size: 0.9rem;
+    display: block;        /* Necessary for overflow to work on tables */
+    overflow-x: auto;      /* Horizontal scrollbar on small screens */
+    white-space: nowrap;   /* Prevents text from wrapping/squishing inside cells */
+  }
+  
+  .kb-paper th { background-color: #f4f4f4; font-weight: bold; text-align: left; border-bottom: 2px solid #222; padding: 10px; }
+  .kb-paper td { border-bottom: 1px solid #ddd; padding: 10px; vertical-align: top; }
+
+  /* Mobile Adjustments */
+  @media (max-width: 600px) {
+    .kb-paper {
+      padding: 1rem; /* Reduce padding on mobile to give text more room */
+    }
+  }
 </style>
 
 <div class="kb-paper">
