@@ -1,10 +1,9 @@
 ---
-layout: common
+layout: page
 ---
 
 <!-- 
-  KB ARTICLE LAYOUT
-  Uses standard 'page' layout for perfect navigation consistency.
+  KB ARTICLE LAYOUT (Fixed Spacing & Borders)
 -->
 <style>
   /* MAIN CANVAS */
@@ -12,12 +11,26 @@ layout: common
     background-color: #ffffff;
     color: #111;
     font-family: 'Courier New', Courier, monospace;
-    padding: 40px;
+    
+    /* FIX 1: Reduced top padding to 20px (was 40px) to pull content up */
+    padding: 20px 40px 40px 40px; 
+    
     min-height: 80vh;
   }
 
   /* TYPOGRAPHY */
-  .kb-canvas h1 { font-size: 2.2rem; border-bottom: 4px solid #000; margin-bottom: 0.5rem; padding-bottom: 10px; line-height: 1.2; color: #000; }
+  .kb-canvas h1 { 
+    font-size: 2.2rem; 
+    border-bottom: 4px solid #000; 
+    margin-bottom: 0.5rem; 
+    
+    /* FIX 2: Increased padding and line-height to stop the overlap */
+    padding-bottom: 15px; 
+    line-height: 1.4; 
+    
+    color: #000; 
+  }
+
   .kb-canvas h2 { font-size: 1.6rem; margin-top: 3rem; border-bottom: 1px solid #ccc; padding-bottom: 5px; color: #000; }
   .kb-canvas h3 { font-size: 1.3rem; margin-top: 2rem; color: #222; }
   .kb-canvas p, .kb-canvas li { font-size: 1rem; line-height: 1.7; color: #333; max-width: 800px; }
@@ -43,7 +56,13 @@ layout: common
   .kb-breadcrumbs a { color: #666; text-decoration: none; }
   .kb-meta { margin-top: 5rem; padding-top: 2rem; border-top: 1px solid #eee; color: #888; font-size: 0.85rem; }
 
-  @media (max-width: 700px) { .kb-canvas { padding: 20px; } .kb-canvas h1 { font-size: 1.8rem; } }
+  @media (max-width: 700px) { 
+    .kb-canvas { 
+      /* Reduce padding further on mobile */
+      padding: 15px; 
+    } 
+    .kb-canvas h1 { font-size: 1.8rem; } 
+  }
 </style>
 
 <div class="kb-canvas">
