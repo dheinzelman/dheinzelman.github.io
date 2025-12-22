@@ -1,67 +1,44 @@
 ---
-layout: common
+layout: page
 title: Knowledge Base
 permalink: /kb/
 ---
 
-<header class="term">
-    {% include term-nav.html %}
-</header>
-
+<!-- CSS SURGERY: Hide Title and Footer -->
 <style>
-  /* 3. Knowledge Base Container Styles */
-  .kb-lobby-container {
-    background-color: #f4f4f4;
+  header .site-title { display: none !important; }
+  footer, .site-footer { display: none !important; }
+
+  .kb-lobby {
+    background-color: #f4f4f4; /* Light grey lobby background */
     color: #222;
-    padding: 2rem;
-    border-radius: 4px;
+    min-height: 100vh;
+    padding: 40px;
     font-family: 'Courier New', Courier, monospace;
-    border: 1px solid #999;
-    box-shadow: 5px 5px 0px rgba(0,0,0,0.2);
-    margin-top: 1rem; 
   }
 
-  .kb-category-header {
-    font-size: 1.4rem;
-    border-bottom: 2px solid #222;
-    margin-bottom: 1rem;
-    padding-bottom: 0.2rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #000;
-  }
+  .kb-lobby h1 { border-bottom: none; margin-bottom: 1rem; color: #000; font-size: 2.5rem; }
+  .kb-lobby p { color: #555; max-width: 600px; margin-bottom: 3rem; }
 
-  .kb-list {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 2.5rem;
-  }
+  .kb-section { margin-bottom: 3rem; }
+  .kb-category-header { font-size: 1.5rem; border-bottom: 2px solid #000; margin-bottom: 1rem; color: #000; text-transform: uppercase; }
 
-  .kb-list li {
-    padding: 0.5rem 0;
-    border-bottom: 1px dashed #ccc;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
+  .kb-list { list-style: none; padding: 0; }
+  .kb-list li { padding: 0.8rem 0; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; align-items: baseline; }
+  .kb-list a { color: #0056b3; font-weight: bold; text-decoration: none; font-size: 1.1rem; }
+  .kb-list a:hover { text-decoration: underline; color: #000; }
+  .kb-date { color: #666; font-size: 0.9rem; }
 
-  .kb-list a {
-    color: #0056b3;
-    font-weight: bold;
-    text-decoration: none;
+  @media (max-width: 700px) {
+    .kb-lobby { padding: 20px; }
   }
-  
-  .kb-list a:hover { text-decoration: underline; }
-
-  .kb-date { font-size: 0.85rem; color: #666; }
 </style>
 
-<div class="kb-lobby-container">
-  <h1 style="border-bottom: none; margin-bottom: 0.5rem; color: #000;">KNOWLEDGE BASE</h1>
-  <p style="margin-bottom: 2rem; color: #555;">Technical documentation and standard operating procedures.</p>
+<div class="kb-lobby">
+  <h1>KNOWLEDGE BASE</h1>
+  <p>Technical documentation, troubleshooting guides, and standard operating procedures.</p>
 
   {% assign grouped_kb = site.kb | group_by: "category" %}
-
   {% for category in grouped_kb %}
     <div class="kb-section">
       <h2 class="kb-category-header">{{ category.name | capitalize }}</h2>
@@ -75,8 +52,4 @@ permalink: /kb/
       </ul>
     </div>
   {% endfor %}
-
-  {% if site.kb.size == 0 %}
-    <p style="color: #666;"><em>No articles found. Check front matter categories.</em></p>
-  {% endif %}
 </div>

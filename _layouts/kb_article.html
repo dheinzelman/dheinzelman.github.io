@@ -1,108 +1,122 @@
 ---
-layout: common
+layout: page
 ---
 
-<!-- KB ARTICLE LAYOUT -->
+<!-- 
+  KB ARTICLE LAYOUT (V3 - Open Canvas)
+  Removes borders and fixed-width containers to allow full content flow.
+  Maintains Light Mode aesthetic via background color.
+-->
+
 <style>
-  /* CSS SURGERY: Hide Title and Footer */
+  /* CSS SURGERY: Hide Site Title and Footer */
   header .site-title { display: none !important; }
   footer, .site-footer { display: none !important; }
 
-  /* The "Paper" container */
-  .kb-paper {
-    background-color: #ffffff;
-    color: #222;
+  /* MAIN CANVAS: The entire reading area */
+  .kb-canvas {
+    background-color: #ffffff; /* Pure white background */
+    color: #111;               /* Near-black text for high contrast */
     font-family: 'Courier New', Courier, monospace;
-    padding: 2rem;
-    border: 1px solid #444;
-    box-shadow: 5px 5px 0px rgba(255,255,255,0.2);
-    text-align: left;
-    margin-top: 20px;
-    margin-bottom: 50px;
+    min-height: 100vh;         /* Ensure it fills the screen */
+    padding: 40px;             /* Generous padding for readability */
     
-    /* FIX 1: Prevent Spillover */
-    overflow-wrap: break-word;  /* Standard property */
-    word-wrap: break-word;      /* Legacy support */
-    max-width: 100%;            /* Ensure it never exceeds screen width */
-    box-sizing: border-box;     /* Keep padding inside width calculation */
+    /* REMOVED: Border, Box-Shadow, Width Constraints */
   }
 
-  /* Typography Overrides */
-  .kb-paper h1, .kb-paper h2, .kb-paper h3 { color: #000; border-bottom-color: #ccc; }
-  .kb-paper p, .kb-paper li { color: #333; line-height: 1.6; }
-  .kb-paper a { color: #0056b3; word-break: break-all; } /* Force long links to break */
-
-  /* FIX 2: Inline Code Wrapping */
-  .kb-paper code { 
-    background-color: #f4f4f4; 
-    color: #d63384; 
-    padding: 2px 5px; 
-    word-break: break-word; /* Allow long file paths to wrap */
+  /* TYPOGRAPHY: Clean and bold */
+  .kb-canvas h1 { 
+    font-size: 2.2rem; 
+    border-bottom: 4px solid #000; 
+    margin-bottom: 0.5rem; 
+    padding-bottom: 10px;
+    line-height: 1.2;
+    color: #000;
   }
 
-  /* Code Blocks (Scroll instead of wrap) */
-  .kb-paper pre { 
+  .kb-canvas h2 { 
+    font-size: 1.6rem; 
+    margin-top: 3rem; 
+    border-bottom: 1px solid #ccc; 
+    padding-bottom: 5px;
+    color: #000;
+  }
+
+  .kb-canvas h3 { 
+    font-size: 1.3rem; 
+    margin-top: 2rem; 
+    color: #222;
+  }
+
+  .kb-canvas p, .kb-canvas li { 
+    font-size: 1rem; 
+    line-height: 1.7; /* Relaxed reading */
+    color: #333; 
+    max-width: 800px; /* Optional: Keep paragraph text from getting too wide to read */
+  }
+
+  /* LINKS */
+  .kb-canvas a { color: #0056b3; text-decoration: underline; }
+  .kb-canvas a:hover { color: #003d80; }
+
+  /* CODE BLOCKS */
+  .kb-canvas code { background-color: #f1f1f1; color: #d63384; padding: 2px 6px; border-radius: 3px; }
+  .kb-canvas pre { 
     background-color: #2d2d2d; 
     color: #f8f8f2; 
-    padding: 1rem; 
-    border-radius: 4px; 
-    overflow-x: auto; /* Adds scrollbar if too wide */
-    white-space: pre; /* Preserves formatting */
-    border: 1px solid #ddd;
+    padding: 1.5rem; 
+    border-radius: 6px; 
+    overflow-x: auto; 
+    margin: 1.5rem 0;
   }
 
-  /* Callouts */
-  .kb-callout { padding: 1rem; margin: 1.5rem 0; border-left: 5px solid #333; background: #f9f9f9; }
+  /* TABLES: Unconstrained */
+  .kb-canvas table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin: 2.5rem 0; 
+    font-size: 0.95rem;
+    /* Removed overflow-x: auto to allow natural expansion */
+  }
+  
+  .kb-canvas th { background-color: #f8f8f8; font-weight: bold; text-align: left; border-bottom: 2px solid #000; padding: 12px; }
+  .kb-canvas td { border-bottom: 1px solid #ddd; padding: 12px; vertical-align: top; }
+
+  /* CALLOUTS */
+  .kb-callout { padding: 1.5rem; margin: 2rem 0; border-left: 6px solid #333; background: #f9f9f9; max-width: 900px; }
   .kb-callout.warning { border-color: #d32f2f; background: #fff5f5; }
   .kb-callout.note { border-color: #1976d2; background: #e3f2fd; }
 
-  /* Breadcrumbs */
-  .kb-breadcrumbs { font-size: 0.9rem; margin-bottom: 1.5rem; color: #666; }
+  /* METADATA */
+  .kb-breadcrumbs { font-size: 0.9rem; margin-bottom: 2rem; color: #666; }
   .kb-breadcrumbs a { color: #666; text-decoration: none; }
-  
-  /* Meta Footer */
-  .kb-footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px dashed #ccc; font-size: 0.8rem; color: #888; }
+  .kb-meta { margin-top: 5rem; padding-top: 2rem; border-top: 1px solid #eee; color: #888; font-size: 0.85rem; }
 
-  /* FIX 3: Responsive Tables */
-  .kb-paper table { 
-    width: 100%; 
-    border-collapse: collapse; 
-    margin: 2rem 0; 
-    font-size: 0.9rem;
-    display: block;        /* Necessary for overflow to work on tables */
-    overflow-x: auto;      /* Horizontal scrollbar on small screens */
-    white-space: nowrap;   /* Prevents text from wrapping/squishing inside cells */
-  }
-  
-  .kb-paper th { background-color: #f4f4f4; font-weight: bold; text-align: left; border-bottom: 2px solid #222; padding: 10px; }
-  .kb-paper td { border-bottom: 1px solid #ddd; padding: 10px; vertical-align: top; }
-
-  /* Mobile Adjustments */
-  @media (max-width: 600px) {
-    .kb-paper {
-      padding: 1rem; /* Reduce padding on mobile to give text more room */
-    }
+  /* MOBILE ADJUSTMENTS */
+  @media (max-width: 700px) {
+    .kb-canvas { padding: 20px; } /* Reduce padding on small screens */
+    .kb-canvas h1 { font-size: 1.8rem; }
   }
 </style>
 
-<div class="kb-paper">
+<div class="kb-canvas">
   
   <div class="kb-breadcrumbs">
     <a href="/">~</a> / <a href="/kb">KB</a> / {{ page.category | default: "General" }}
   </div>
 
-  <h1 style="font-size: 2rem; margin-bottom: 0.5rem; border-bottom: 4px solid #222;">{{ page.title }}</h1>
+  <h1>{{ page.title }}</h1>
   
-  <div style="margin-bottom: 2rem; font-size: 0.9rem; color: #666;">
+  <div style="margin-bottom: 3rem; color: #666; font-size: 0.9rem;">
     Last Updated: {{ page.last_updated | date: "%Y-%m-%d" }}
   </div>
 
-  <div class="kb-content">
+  <div class="kb-content-body">
     {{ content }}
   </div>
 
-  <footer class="kb-footer">
-    Tags: {{ page.tags | join: ", " }}
+  <footer class="kb-meta">
+    TAGS: {{ page.tags | join: ", " }}
   </footer>
 
 </div>
