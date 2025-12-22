@@ -1,0 +1,12 @@
+<!-- Custom Knowledge Base Header -->
+<header style="font-family: 'Courier New', Courier, monospace; padding-bottom: 10px;">
+  <nav>
+    <!-- Loop through the 'nav' list in _config.yml -->
+    {% for item in site.nav %}
+      <a href="{{ item.href }}" 
+         style="margin-right: 20px; color: #000; text-decoration: none; font-weight: bold; font-size: 1.1rem;">
+         {{ item.name }}
+      </a>
+    {% endfor %}
+  </nav>
+</header>

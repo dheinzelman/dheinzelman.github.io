@@ -1,13 +1,11 @@
 ---
-layout: page
+layout: common
 ---
 
-<!-- 
-  KB ARTICLE LAYOUT (V3 - Open Canvas)
-  Removes borders and fixed-width containers to allow full content flow.
-  Maintains Light Mode aesthetic via background color.
--->
-
+<!-- INJECT CUSTOM KB HEADER -->
+<div style="background-color: #f4f4f4; border-bottom: 1px solid #ccc; padding: 15px 40px;">
+  {% include kb_header.html %}
+</div>
 <style>
   /* CSS SURGERY: Hide Site Title and Footer */
   header .site-title { display: none !important; }
