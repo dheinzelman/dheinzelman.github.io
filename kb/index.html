@@ -4,21 +4,17 @@ title: Knowledge Base
 permalink: /kb/
 ---
 
-<!-- INJECT CUSTOM KB HEADER -->
-<div style="background-color: #f4f4f4; border-bottom: 1px solid #ccc; padding: 15px 40px;">
-  {% include kb_header.html %}
-</div>
-<!-- CSS SURGERY: Hide Title and Footer -->
+<!-- 
+  KB INDEX
+  Uses standard 'page' layout for perfect navigation consistency.
+-->
 <style>
-  header .site-title { display: none !important; }
-  footer, .site-footer { display: none !important; }
-
   .kb-lobby {
-    background-color: #f4f4f4; /* Light grey lobby background */
+    background-color: #f4f4f4;
     color: #222;
-    min-height: 100vh;
     padding: 40px;
     font-family: 'Courier New', Courier, monospace;
+    min-height: 80vh; /* changed from 100vh to fit inside page layout better */
   }
 
   .kb-lobby h1 { border-bottom: none; margin-bottom: 1rem; color: #000; font-size: 2.5rem; }
@@ -33,9 +29,7 @@ permalink: /kb/
   .kb-list a:hover { text-decoration: underline; color: #000; }
   .kb-date { color: #666; font-size: 0.9rem; }
 
-  @media (max-width: 700px) {
-    .kb-lobby { padding: 20px; }
-  }
+  @media (max-width: 700px) { .kb-lobby { padding: 20px; } }
 </style>
 
 <div class="kb-lobby">
