@@ -8,15 +8,15 @@ tags: [nook, android, barnes-and-noble, guide]
 
 1. Open the B&N NOOK for Android app. Go to the *All Titles* section.
 
-![[nook_library_all_titles.png]](/nook_library_all_titles.png)
+![[nook_library_all_titles.png]](images/kb/nook/nook_library_all_titles.png)
 
 2. Tap the *All Types* filter, then tap *My Files*
 
-![[nook_library_all_titles_filters.png]](/nook_library_all_titles_filters.png)
+![[nook_library_all_titles_filters.png]](images/kb/nook/nook_library_all_titles_filters.png)
 
 3. In the app you will see *To see sideload files, please enable sideloading.* and the tappable text: *ENABLE SIDELOADING*. Tap it.
 
-![[nook_library_my_files_havent_copied_any_files.png]](/nook_library_my_files_havent_copied_any_files.png)
+![[nook_library_my_files_havent_copied_any_files.png]](images/kb/nook/nook_library_my_files_havent_copied_any_files.png)
 
 4. A *Internal Storage Permission Needed* prompt will appear. Tap *ALLOW ACCESS*.
 5. You will be taken to the Files app where you will choose a directory where EPUB content is, or you will create a directory that will contain content. Finally, choose *Use this folder*.
