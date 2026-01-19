@@ -1,5 +1,5 @@
 ---
-layout: common
+layout: term
 title: "Detailed Resolution Summary: Chrome Policy Lockout"
 category: networking
 last_updated: 2025-05-20

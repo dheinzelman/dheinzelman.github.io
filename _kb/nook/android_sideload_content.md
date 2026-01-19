@@ -1,5 +1,5 @@
 ---
-layout: common
+layout: term
 title: "How to sideload EPUB content on B&N NOOK for Android"
 category: nook
 last_updated: 2026-01-18
