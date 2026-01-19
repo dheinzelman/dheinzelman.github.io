@@ -8,7 +8,7 @@ tags: [nook, android, barnes-and-noble, guide]
 
 # Overview
 
-The **Barnes & Noble NOOK app** for Android primarily supports EPUB files (the industry standard for eBooks) and PDF documents. These files must generally be DRM-free (unprotected) to be opened directly.
+The **Barnes & Noble NOOK app** for Android primarily supports EPUB files (the industry standard for eBooks) and PDF documents. These files must be DRM-free (unprotected) to be opened directly.
 
 ## How This Page Helps
 While the app is capable of reading these files, it does not automatically detect them by default. The instructions on this page will guide you through the hidden setup process to recognize and display your personal content on your device.
